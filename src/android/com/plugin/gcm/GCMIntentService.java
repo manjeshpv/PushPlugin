@@ -1,5 +1,6 @@
 package com.plugin.gcm;
 
+import java.util.Random;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,7 +86,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		
 		try {
 			Random rand = new Random();
-			notId = Integer.parseInt(extras.getString("notId",rand.nextInt(1000)));
+			notId = Integer.parseInt(extras.getString("notId"),rand.nextInt(1000));
 			
 		}
 		catch(NumberFormatException e) {
