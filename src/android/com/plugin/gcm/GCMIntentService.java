@@ -86,7 +86,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		
 		try {
 			Random rand = new Random();
-			notId = Integer.parseInt(extras.getString("notId"),rand.nextInt(1000));
+			notId = Integer.parseInt(extras.getString("notId", String.valueOf(rand.nextInt(1000))));
 			
 		}
 		catch(NumberFormatException e) {
