@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import java.util.Random;
 
 import com.google.android.gcm.GCMBaseIntentService;
 
@@ -85,7 +86,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		
 		try {
 			Random rand = new Random();
-			notId = Integer.parseInt(extras.getString("notId",rand.nextInt(1000)));
+			notId = Integer.parseInt(extras.getString("notId",Integer.toString(rand.nextInt(1000))));
 			
 		}
 		catch(NumberFormatException e) {
